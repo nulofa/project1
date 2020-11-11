@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>Guide</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Medical Clinic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="../static/new_css/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../static/new_css/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="../static/new_css/js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+{#<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>#}
+{#<link href='http://fonts.useso.com/css?family=Archivo+Narrow:400,400italic,700,700italic' rel='stylesheet' type='text/css'>#}
+ <link rel="stylesheet" href="../static/css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/fontawesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+
+a:link{color:red;}
+
+
+</style>
+</head>
+<body background=“./bg0.jpg”
+style=" background-repeat:no-repeat ;
+background-size:100% 100%;
+background-attachment: fixed;">
+
+<div class="banner1">
+		<div class="container">
+<!-- header -->
+			<div class="header">
+					<div class="logo">
+					   <a href="{% url 'index' %}"><i class="glyphicon glyphicon" aria-hidden="true"></i>Expression Profile Search<span>For Arabidopsis thaliana</span></a>
+					</div>
+					<div class="top-nav">
+						<span class="menu"><img src="../static/new_css/images/menu.png" alt=" " /></span>
+						<ul class="nav">
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li class="active"><a href="{% url 'tages' %}">Guide</a></li>
+{#							<li><a href="services.html">Services</a></li>#}
+{#							<li><a href="gallery.html">Gallery</a></li>#}
+{#							<li><a href="contact.html">Contact</a></li>#}
+						</ul>
+								<!-- script-for-menu -->
+								 <script>
+								   $( "span.menu" ).click(function() {
+									 $( "ul.nav" ).slideToggle( 300, function() {
+									 // Animation complete.
+									  });
+									 });
+								</script>
+								<!-- /script-for-menu -->
+					</div>
+					<div class="clearfix"> </div>
+            </div>
+
+		    <div class="jumbotron" >
+
+        <h4><strong>Input File Preparation :</strong></h4>
+        <h5><strong> File Format </strong></h5>
+        <h7>This web accepts query files in .txt(tab-separated) and .tsv format</p>
+        <h5><strong> File Description </strong></h5>
+        <h7>Input file must contain gene expression data as 2 columns matrix. The first column must contain the corresponding gene symbols. The first row is sample labels.</p>
+        <h7>A sample query file can be viewed <a class="mya" href="{% url 'download2' %}" download>here</a>.</p>
+        <h5><strong> Genes Details </strong></h5>
+        <h7>Search is built on a set of 38312 genes. The list of genes used can be found <a href="{% url 'download' %}" download>here</a>.</p>
+        <h7>Users do not have to bother about maintaining the right set of genes in the query file. The query preprocessing step handles the user query intelligently to align the genes in a set order along with that it also handles cases when the number of genes is more or less.  </p>
+
+    </div>
+
+        </div>
+
+</div>
+
+</body>
+</html>

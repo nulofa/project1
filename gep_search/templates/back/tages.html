@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gene Expression Profile Search</title>
+	<link href="{% static 'css2/bootstrap.css' %}"  type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css2/htmleaf-demo.css' %}">
+	<link href="{% static 'css2/jumbotron-narrow.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{%static 'img/favicon.ico' %}" />
+
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+
+        <link rel="stylesheet" href="{%  static '/css/w3.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="{% static '/css/fontawesome.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+{% include 'header.html' %}
+<div class="htmleaf-container">
+		<div class="container">
+    <div class="jumbotron2" >
+        <div id="q" align="left">
+        <h4><strong>Input File Preparation :</strong></h4>
+        <h5><strong> File Format </strong></h5>
+        <h7>This web accepts query files in .txt(tab-separated) and .tsv format</p>
+        <h5><strong> File Description </strong></h5>
+        <h7>Input file must contain gene expression data as 2 columns matrix. The first column must contain the corresponding gene symbols. The first row is sample labels.</p>
+        <h7>A sample query file can be viewed <a href="{% url 'download2' %}"download>here</a>.</p>
+        <h5><strong> Genes Details </strong></h5>
+        <h7>Search is built on a set of 38312 genes. The list of genes used can be found <a href="{% url 'download' %}" download>here</a>.</p>
+        <h7>Users do not have to bother about maintaining the right set of genes in the query file. The query preprocessing step handles the user query intelligently to align the genes in a set order along with that it also handles cases when the number of genes is more or less.  </p>
+
+        </div>
+    </div>
+        </div>
+</div>
+</body>
+</html>

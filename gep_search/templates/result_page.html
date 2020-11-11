@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>Result</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Medical Clinic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="../static/new_css/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../static/new_css/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="../static/new_css/js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+{#<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>#}
+{#<link href='http://fonts.useso.com/css?family=Archivo+Narrow:400,400italic,700,700italic' rel='stylesheet' type='text/css'>#}
+ <link rel="stylesheet" href="../static/css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/fontawesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+table.imagetable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.imagetable th {
+    background:#b5cfd2 ;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}
+
+table.imagetable td {
+    height: 5px;
+    background:#dcddc0 ;
+    align-content: center;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #999999;
+}
+          #pageStyle{
+         display:inline-block;
+         width:32px;
+         height:32px;
+         border:1px solid #CCC;
+         line-height:32px;
+         text-align:center;
+         color: #130ecc;
+         margin-top:20px;
+         text-decoration:none;
+
+         }
+      #pageStyle:hover{
+          background-color:#CCC;
+          }
+      #pageStyle .active{
+          background-color:#0CF;
+          color:#ffffff;
+          }
+         .style1
+         {
+             font-size: 12pt;
+         }
+</style>
+
+
+<script type="text/javascript">
+    //分頁顯示
+        $(function () {
+            var $table = $("table");
+            var currentPage = 0; //当前页默认值为0
+            var pageSize = 5; //每一页显示的数目
+            $table.bind('paging', function () {
+                $table.find('tbody tr').hide().slice(currentPage * pageSize, (currentPage + 1) * pageSize).show();
+            });
+            var sumRows = $table.find('tbody tr').length;
+            var sumPages = Math.ceil(sumRows / pageSize); //总页数
+
+            var $pager = $('<div class="page"></div>');  //新建div，放入a标签,显示底部分页码
+            for (var pageIndex = 0; pageIndex < sumPages; pageIndex++) {
+                $('<a href="#" id="pageStyle" onclick="changCss(this)"><span>' + (pageIndex + 1) + '</span></a>').bind("click", { "newPage": pageIndex }, function (event) {
+                    currentPage = event.data["newPage"];
+                    $table.trigger("paging");
+                    //触发分页函数
+                }).appendTo($pager);
+                $pager.append(" ");
+            }
+            $pager.insertAfter($table);
+            $table.trigger("paging");
+
+            //默认第一页的a标签效果
+            var $pagess = $('#pageStyle');
+            $pagess[0].style.backgroundColor = "#006B00";
+            $pagess[0].style.color = "#ffffff";
+        });
+
+        //a链接点击变色，再点其他回复原色
+        function changCss(obj) {
+            var arr = document.getElementsByTagName("a");
+            for (var i = 0; i < arr.length; i++) {
+                if (obj == arr[i]) {       //当前页样式
+                    obj.style.backgroundColor = "#006B00";
+                    obj.style.color = "#ffffff";
+                }
+                else {
+                    arr[i].style.color = "";
+                    arr[i].style.backgroundColor = "";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="banner1">
+		<div class="container">
+<!-- header -->
+			<div class="header">
+					<div class="logo">
+					   <a href="{% url 'index' %}"><i class="glyphicon glyphicon" aria-hidden="true"></i>Expression Profile Search<span>For Arabidopsis thaliana</span></a>
+					</div>
+					<div class="top-nav">
+						<span class="menu"><img src="../static/new_css/images/menu.png" alt=" " /></span>
+						<ul class="nav">
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'tages' %}">Guide</a></li>
+{#							<li><a href="services.html">Services</a></li>#}
+{#							<li><a href="gallery.html">Gallery</a></li>#}
+{#							<li><a href="contact.html">Contact</a></li>#}
+						</ul>
+								<!-- script-for-menu -->
+								 <script>
+								   $( "span.menu" ).click(function() {
+									 $( "ul.nav" ).slideToggle( 300, function() {
+									 // Animation complete.
+									  });
+									 });
+								</script>
+								<!-- /script-for-menu -->
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+
+        <div class="jumbotron">
+            <i align="left">Scatter plot of search results can be viewed <a href="{% url 'scatter' %}" style="color:red;" target="_Blank">here</a></i>
+        <br>
+    {#    <div class="row marketing">#}
+
+    {#      <div class="col-lg-12" id="result-list">#}
+
+            <table class="imagetable" >
+            <THEAD >
+                <tr align="center">
+                <td>Accessions numbers</td>
+				<td>Title</td>
+                <td>Characteristics</td>
+                {#<td>genotype</td>#}
+                {#<td>growth condition</td>#}
+                <td>Spearman correlation</td>
+                <th>GEO link</th>
+            </tr>
+            </THEAD>
+
+            {% for titl in reslist %}
+            <tr align="center">
+                <td>{{ titl.0 }}</td>
+                <td>{{ titl.1 }}</td>
+                <td>{% for charac in titl.2 %}{{ charac }}<br>{% endfor %}</td>
+                <td>{{ titl.3 }}</td>
+            {#<td>{{ titl.4 }}</td>#}
+                <td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc={{ titl.0 }}" target="_Blank">more about</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+    {#        </div>#}
+
+
+    {#    </div>#}
+        </div>
+
+        </div>
+
+</div>
+
+</body>

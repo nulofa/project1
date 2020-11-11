@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gene Expression Profile Search</title>
+	<link href="{% static 'css2/bootstrap.css' %}"  type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css2/htmleaf-demo.css' %}">
+	<link href="{% static 'css2/jumbotron-narrow.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{%static 'img/favicon.ico' %}" />
+
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+
+        <link rel="stylesheet" href="{%  static '/css/w3.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="{% static '/css/fontawesome.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+{% include 'header.html' %}
+<div class="htmleaf-container">
+		<div class="container">
+
+
+    <div class="jumbotron2">
+     <p align="left">查找结果:</p>
+{#    <div class="row marketing">#}
+
+{#      <div class="col-lg-12" id="result-list">#}
+
+        <table class="w3-table" >
+        <tr>
+            <td>文件名</td>
+            <td>列名</td>
+            <td>相似度</td>
+{#            <th>链接</th>#}
+        </tr>
+        {% for titl in reslist %}
+        <tr>
+            <td style="word-break: break-all"><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc={{ titl.3 }}" target="_Blank">{{ titl.0}}</a></td>
+        <td style="word-break: break-all">{{ titl.1 }}</td>
+        <td>{{ titl.2 }}</td>
+{#            <td>link</a></td>#}
+        </tr>
+        {% endfor %}
+        </table>
+{#        </div>#}
+
+
+{#    </div>#}
+    </div>
+
+        </div>
+
+</div>
+
+</body>
